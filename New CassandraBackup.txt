@@ -1,0 +1,94 @@
+CREATE TABLE roomautomation.apidetails(
+	apidid int,
+	api_name text,
+	response_code int,
+	restime timestamp,
+	roomid int,
+	PRIMARY KEY (apidid)
+) 
+
+CREATE TABLE roomautomation.frequencydetail(
+	frqdtlid int,
+	humidity_freq double,
+	lux_freq double,
+	pressure_freq double,
+	roomid int,
+	temp_freq double,
+	time timestamp,
+	PRIMARY KEY (frqdtlid)
+)
+
+CREATE TABLE roomautomation.humidity(
+	humiid int,
+	freq_val double,
+	roomid int,
+	time timestamp,
+	PRIMARY KEY (humiid)
+) 
+
+CREATE TABLE roomautomation.lux(
+	luxid int,
+	freq_val double,
+	roomid int,
+	time timestamp,
+	PRIMARY KEY (luxid)
+)
+
+CREATE TABLE roomautomation.pressure(
+	pressid int,
+	freq_val double,
+	roomid int,
+	time timestamp,
+	PRIMARY KEY (pressid)
+) 
+
+CREATE TABLE roomautomation.room(
+	roomid int,
+	buildg text,
+	floor int,
+	noofsensors int,
+	PRIMARY KEY (roomid)
+) 
+
+CREATE TABLE roomautomation.roomsensor(
+	sensorid int,
+	buildg text,
+	floor int,
+	isenabled boolean,
+	roomid int,
+	type text,
+	PRIMARY KEY (sensorid)
+)
+
+CREATE TABLE roomautomation.sensor(
+	sensorid int,
+	frequency int,
+	sensortype text,
+	PRIMARY KEY (sensorid)
+)
+
+CREATE TABLE roomautomation.sensordetails(
+	sensorid int,
+	isenabled boolean,
+	roomid int,
+	type text,
+	PRIMARY KEY (sensorid)
+) 
+
+CREATE TABLE roomautomation.temperature(
+	tempid int,
+	freq_val double,
+	roomid int,
+	time timestamp,
+	PRIMARY KEY (tempid)
+)
+
+CREATE TABLE roomautomation.users(
+	userid int,
+	username text,
+	firstname text,
+	lastname text,
+	password text,
+	role text,
+	PRIMARY KEY (userid, username)
+)
